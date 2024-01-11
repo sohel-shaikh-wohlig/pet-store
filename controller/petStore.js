@@ -14,6 +14,7 @@ class OwnerService {
             let data=model.readFile(fspath.join(__dirname, '../datastore/ownerDetails.json'));
             if(data.err === false){
                 let result=JSON.parse(data.result);
+                console.log(result)
                 return result;
             } else{
                 return {"err":data.errMsg};
@@ -37,7 +38,8 @@ class OwnerService {
                     });
                     if(index >=0){
                         const ownerDetail=ownerResult[index];
-                        ownerDetail.pets=findPets;             
+                        ownerDetail.pets=findPets;     
+                        console.log(ownerDetail)        
                         return ownerDetail;
                     } else{
                         return {"err":"No data found"};
