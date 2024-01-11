@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res)=>{
     let text = `<div style='position:fixed;top: 50%;left: 50%;width:30em;height:18em;margin-top: -9em;margin-left: -15em;'>`
     text += `<center><h1 style='color:ff006e;'>Welcome to the Pet Store World!</h1></center><br/>`
-    text += `<center><h4 style='color:fb5607;'>Environment Variables : <br/>APP_NAME : <span style='color:#3a86ff;'><b>${process.env.APP_NAME}</b></span></h4></center>`
+    text += `<center><h4 style='color:fb5607;'>Environment Variables : <br/>APP_VERSION : <span style='color:#3a86ff;'><b>${process.env.APP_VERSION}</b></span></h4></center>`
     text += '</div>'
     res.send(text);
 });
