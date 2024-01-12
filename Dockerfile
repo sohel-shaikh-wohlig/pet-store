@@ -7,8 +7,8 @@ RUN ls
 RUN npm install
 COPY . .
 
-RUN npm install --save @opentelemetry/api
-RUN npm install --save @opentelemetry/auto-instrumentations-node
+#RUN npm install --save @opentelemetry/api
+#RUN npm install --save @opentelemetry/auto-instrumentations-node
 
 
 EXPOSE 3001
