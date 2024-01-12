@@ -3,6 +3,8 @@ const express= require('express');
 const router = express.Router();
 const PetStore = require('../controller/petStore');
 const petStore = new PetStore();
+const BhApi = require('../controller/BhApi')
+const bhApi = new BhApi()
 
 
 // For logging purpose
@@ -14,6 +16,12 @@ const logger = winston.createLogger({
       new winston.transports.File({ filename: 'result.log' })
     ]
 });
+
+router.get('/otlp',async (req, res) => {
+    const result= await bhApi.getData();
+    logger.info(result);
+    res.json(result);
+})
 
 //API for fetching all owner from the json file
 router.get('/owners', async (req, res) => {
